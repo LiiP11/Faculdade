@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <locale.h>
 
 void bufferClean(){
 	char c;
@@ -19,7 +18,7 @@ void bufferClean(){
 	}paciente[99];
 
 int main(){
-	setlocale(LC_ALL,"Portuguese");
+	
 	int i,qtd,op,found;
 	char pesquisa[15];
 	
@@ -65,8 +64,8 @@ int main(){
 
 					printf("Digite o numero do lote: ");
 					scanf("%s[^\n]",paciente[i].lote);
-					printf("=======================\n");
 					bufferClean();
+					printf("=======================\n");
 					system("clear");
 				}
 			break;
@@ -91,6 +90,7 @@ int main(){
 				printf("Informe o CPF:");
 				scanf("%s",pesquisa);
 				found=0;
+				
 				for (i = 0; i < qtd; i++){
 					if (strcmp(pesquisa,paciente[i].cpf)==0){
 						bufferClean();
